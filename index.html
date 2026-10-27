@@ -197,36 +197,6 @@ section:nth-of-type(5)::after{background-image:url(images/bg5.jpg)}
 section:nth-of-type(6)::after{background-image:url(images/bg6.jpg)}
 section:nth-of-type(7)::after{background-image:url(images/bg7.jpg)}
 footer::after{background-image:url(images/bg8.jpg)}
- /* Stabilize the background on mobile devices */
-html,
-body {
-  min-height: 100%;
-}
-
-.hero {
-  min-height: 100vh;
-  min-height: 100svh;
-}
-
-/* Keep the first background fitted to the visible screen */
-section:nth-of-type(1)::after,
-#gate .nature::after {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-/* Keep fixed background layers aligned to the viewport */
-#gate .nature {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-}
-
-#gate .nature::after {
-  position: absolute;
-  inset: 0;
-}
 </style>
 </head>
 <body class="locked">
