@@ -221,6 +221,86 @@
   section:nth-of-type(6)::after{background-image:url(images/bg6.jpg)}
   section:nth-of-type(7)::after{background-image:url(images/bg7.jpg)}
   footer::after{background-image:url(images/bg8.jpg)}
+
+/* Wedding event cards — two columns */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 36px auto 0;
+  text-align: center;
+  align-items: stretch;
+}
+
+.event-card {
+  min-width: 0;
+  padding: clamp(18px, 3vw, 36px) clamp(12px, 2vw, 24px);
+  margin: 0;
+  background: rgba(255, 250, 240, 0.88);
+  border: 1px solid var(--gold);
+  outline: 1px solid var(--gold);
+  outline-offset: -7px;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(36, 64, 44, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-card h3 {
+  font-family: var(--script);
+  font-size: clamp(32px, 4.5vw, 58px);
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+  color: #000;
+}
+
+.event-card p {
+  margin: 10px 0;
+}
+
+.event-card .time {
+  font-size: clamp(18px, 2.5vw, 28px);
+}
+
+.event-card .small {
+  font-size: 0.72em;
+  overflow-wrap: anywhere;
+}
+
+.event-card .venue {
+  overflow-wrap: anywhere;
+  font-size: 0.9em;
+}
+
+/* Keep two cards side by side on mobile too */
+@media (max-width: 640px) {
+  .event-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .event-card {
+    padding: 22px 10px;
+    outline-offset: -5px;
+  }
+
+  .event-card h3 {
+    font-size: clamp(28px, 7vw, 40px);
+  }
+
+  .event-card p {
+    font-size: 0.9em;
+  }
+
+  .event-card .venue {
+    font-size: 0.78em;
+  }
+}
+
   </style>
   </head>
   <body class="locked">
@@ -316,51 +396,74 @@
     </div>
   </section>
 
-  <section class="alt">
-    <div class="wrap">
-      <div class="orn">❦</div>
-      <h2>Schedule of Events</h2>
-      <div class="orn">♥</div>
-      <p class="small">A celebration of tradition, love &amp; family</p>
-      <div class="frame card">
-        <h3>Sangeet & Haldi</h3>
-        <p>23rd of January</p>
-      </div>
-    </div>
-  </section>
 
-  <section>
-    <div class="wrap">
-      <h2>Schedule of Events</h2>
-      <div class="orn">♥</div>
-      <p class="small">A celebration of love, faith &amp; forever</p>
-      <div class="orn">❦</div>
-      <h3 style="letter-spacing:.14em;font-size:1.4em">24rd JANUARY, 2027</h3>
-      <div class="orn">♦</div>
-      <div class="frame card">
-        <h3>Wedding</h3>
-        <div class="time">3:00 PM</div>
+<section class="alt">
+  <div class="wrap">
+    <div class="orn">❦</div>
+    <h2>Schedule of Events</h2>
+    <div class="orn">♥</div>
+    <p class="small">A celebration of tradition, love &amp; family</p>
+
+    <div class="event-grid">
+
+      <!-- Left card: Haldi -->
+      <div class="event-card">
+        <div class="orn">✦</div>
+        <h3>Haldi</h3>
+        <p>23rd January 2027</p>
+        <p class="small">Time</p>
+        <p>Details to be added</p>
         <p class="small">Venue</p>
-        <a class="venue" href="https://maps.app.goo.gl/F1RsPp6k4SX69nKL9?g_st=iw" target="_blank" rel="noopener">St. Joseph's Church Pushpagiri Kottayam</a>
-        <p class="verse">“Therefore what God has joined together,<br>let no one separate.”<small>MATTHEW 19:6</small></p>
-      </div>
-      <div class="orn">♥</div>
-    </div>
-  </section>
-
-  <section class="alt">
-    <div class="wrap">
-      <h2>Schedule of Events</h2>
-      <div class="orn">♥</div>
-      <p class="small">A celebration of love, faith &amp; forever</p>
-      <div class="frame card">
-        <h3>Reception</h3>
         <p>Details to be added</p>
       </div>
-    </div>
-  </section>
 
-  <footer>
+      <!-- Right card: Sangeet -->
+      <div class="event-card">
+        <div class="orn">✦</div>
+        <h3>Sangeet</h3>
+        <p>23rd January 2027</p>
+        <p class="small">Time</p>
+        <p>Details to be added</p>
+        <p class="small">Venue</p>
+        <p>Details to be added</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Wedding Celebrations</h2>
+    <div class="orn">♥</div>
+    <p class="small">A celebration of love, faith &amp; forever</p>
+
+    <div class="event-grid">
+
+      <!-- Left card: Nikkah -->
+      <div class="event-card">
+        <div class="orn">✦</div>
+        <h3>Nikkah</h3>
+        <p>Details to be added</p>
+        <p class="small">Time &amp; Venue</p>
+        <p>Details to be added</p>
+      </div>
+
+      <!-- Right card: Reception -->
+      <div class="event-card">
+        <div class="orn">✦</div>
+        <h3>Reception</h3>
+        <p>Details to be added</p>
+        <p class="small">Time &amp; Venue</p>
+        <p>Details to be added</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
     <p class="small">Celebrate this new chapter with us.</p>
     <div class="orn">♥</div>
     <a class="btn" href="https://maps.app.goo.gl/F1RsPp6k4SX69nKL9?g_st=iw" target="_blank" rel="noopener">📍 GET DIRECTIONS</a>
