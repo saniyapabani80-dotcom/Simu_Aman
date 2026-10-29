@@ -8,7 +8,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
   <style>
-  :root{--bg:#f7efe2;--a1:#efe2cc;--ink:#4a1420;--accent:#8a2a3b;--gold:#b08a3e;--card:#fffaf0;--line:#d9c49a;
+  :root {
+    --bg: #F8E8E6;
+    --bg2: #F5DFDC;
+    --ink: #4A1420;
+    --accent: #8A2A3B;
+    --gold: #B08A3E;
+    --card: #FFF7F5;
+    --line: #E8B9B3;
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --script: "Pinyon Script", "Brush Script MT", cursive;
+}
   --serif:"Cormorant Garamond",Georgia,serif;--script:"Pinyon Script","Brush Script MT",cursive;
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a0f16;--a1:#3a1520;--ink:#f3e6cf;--accent:#e2a9b3;--gold:#d8b56a;--card:#3a1a24;--line:#6b4a3a}}
@@ -470,75 +480,123 @@
   }
 }
 
-/* Thin black divider between website sections */
-section {
-  border-bottom: 2px solid #222;
-}
-
-footer {
-  border-top: 2px solid #222;
-}
-
-/* Mobile viewport and horizontal overflow fix */
-html {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: clip;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-body {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  overflow-x: clip;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-/* Keep sections and content inside the phone screen */
-section,
-footer,
-.wrap {
-  max-width: 100%;
-  min-width: 0;
-}
-
-/* Make the scratch card fit small screens */
-.scratch {
-  width: min(100%, 340px);
-  max-width: 100%;
-  touch-action: pan-y;
-}
-
-.scratch canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-  touch-action: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-/* Prevent mobile layout from becoming wider than the screen */
-@media (max-width: 600px) {
+  /* Thin black divider between website sections */
   section {
-    padding-left: 16px;
-    padding-right: 16px;
+    border-bottom: 2px solid #222;
   }
 
-  .wrap {
+  footer {
+    border-top: 2px solid #222;
+  }
+
+  /* Mobile viewport and horizontal overflow fix */
+  html {
     width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
-  .event-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: clip;
   }
-}
 
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* Keep sections and content inside the phone screen */
+  section,
+  footer,
+  .wrap {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Make the scratch card fit small screens */
+  .scratch {
+    width: min(100%, 340px);
+    max-width: 100%;
+    touch-action: pan-y;
+  }
+
+  .scratch canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Prevent mobile layout from becoming wider than the screen */
+  @media (max-width: 600px) {
+    section {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .wrap {
+      width: 100%;
+    }
+
+    .event-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+
+  /* GLOBAL BLUSH-MARBLE BACKGROUND FIX */
+  :root {
+    --bg: #F8E8E6;
+    --bg2: #F5DFDC;
+    --card: #FFF7F5;
+    --line: #E8B9B3;
+  }
+
+  html,
+  body {
+    background: #F8E8E6 !important;
+    background-color: #F8E8E6 !important;
+  }
+
+  /* Envelope screen: no blue flash while its image loads */
+  #gate {
+    background: #F8E8E6 !important;
+  }
+
+  .nature {
+    background: #F8E8E6 !important;
+  }
+
+  /* Pink fallback behind every section's background image */
+  section::before,
+  footer::before {
+    background: linear-gradient(
+      135deg,
+      #FBEFED 0%,
+      #F8E8E6 50%,
+      #F5DFDC 100%
+    ) !important;
+  }
+
+  /* Keep background images layered above the fallback */
+  section,
+  footer {
+    background-color: #F8E8E6;
+  }
+
+  section::after,
+  footer::after,
+  #gate .nature::after {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   </style>
   </head>
   <body class="locked">
