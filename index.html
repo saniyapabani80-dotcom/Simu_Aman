@@ -573,23 +573,6 @@
     background: #F8E8E6 !important;
   }
 
-  /* Pink fallback behind every section's background image */
-  section::before,
-  footer::before {
-    background: linear-gradient(
-      135deg,
-      #FBEFED 0%,
-      #F8E8E6 50%,
-      #F5DFDC 100%
-    ) !important;
-  }
-
-  /* Keep background images layered above the fallback */
-  section,
-  footer {
-    background-color: #F8E8E6;
-  }
-
   section::after,
   footer::after,
   #gate .nature::after {
@@ -597,6 +580,107 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+
+
+/* Blush-pink fallback while images load */
+html,
+body {
+  background-color: #F8E8E6 !important;
+}
+
+#gate {
+  background-color: #F8E8E6 !important;
+}
+
+/* Keep section backgrounds transparent so images remain visible */
+section,
+footer {
+  background-color: transparent !important;
+}
+
+/* Preserve the original image positioning */
+section::after,
+footer::after,
+#gate .nature::after {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ===== FIX: BACKGROUND BEFORE AND AFTER OPENING ===== */
+
+html {
+  background: #F8E8E6 !important;
+}
+
+body {
+  background: #F8E8E6 url("images/a1.jpg") center center / cover fixed no-repeat !important;
+  background-color: #F8E8E6 !important;
+}
+
+/* Show the image on the envelope screen BEFORE opening */
+#gate {
+  background: #F8E8E6 url("images/a1.jpg") center center / cover no-repeat !important;
+  background-color: #F8E8E6 !important;
+}
+
+/* Prevent the old hidden nature layers from covering the image */
+body > .nature,
+#gate > .nature {
+  display: none !important;
+}
+
+/* Remove the old illustrated nature backgrounds */
+section::before,
+footer::before {
+  display: none !important;
+}
+
+/* Put the background image behind the content of each section */
+section,
+footer {
+  position: relative;
+  isolation: isolate;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+section::after,
+footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("images/a1.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  pointer-events: none;
+}
+
+/* Keep section content above its background image */
+section > *,
+footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Keep the envelope and its animation above the page */
+#gate {
+  z-index: 50;
+}
+
+/* Keep the decorative animation layers working */
+#fx {
+  z-index: 60;
+  pointer-events: none;
+}
+
+#fx2 {
+  z-index: 1;
+  pointer-events: none;
+}
+
   </style>
   </head>
   <body class="locked">
@@ -773,7 +857,7 @@
 <footer>
     <p class="small">Celebrate this new chapter with us.</p>
     <div class="orn">♥</div>
-    <a class="btn" href="https://maps.app.goo.gl/hEYf1xtA7PokVGqJ6" target="_blank" rel="noopener">📍 GET DIRECTIONS</a>
+    <a class="btn" href="http://google.com/maps/place/Collection+O+Hotel+Regal+Near+ISKON+TEMPLE+,+ABIDS/@17.3878098,78.4728465,17z/data=!3m1!4b1!4m9!3m8!1s0x3bcb99d61ede169d:0x234cb665b24bd221!5m2!4m1!1i2!8m2!3d17.3878047!4d78.4754214!16s%2Fg%2F1hdy_4pl3?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">📍 GET DIRECTIONS</a>
   </footer>
 
   <script>
@@ -820,16 +904,6 @@
       document.getElementById('s').textContent=pad(s%60);
     }
     tick();setInterval(tick,1000);
-
-    document.getElementById('rsvp').addEventListener('submit',function(e){
-      e.preventDefault();
-      var f=e.target,name=f.name.value.trim(),att=f.att.value;
-      var msg=document.getElementById('thanks');
-      msg.textContent=att==='Joyfully Accept'
-        ?'Thank you, '+name+'! We can’t wait to celebrate with you.'
-        :'Thank you, '+name+'. You will be missed, and we appreciate you letting us know.';
-      msg.style.display='block';f.style.display='none';
-    });
   })();
   </script>
   <script>
