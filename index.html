@@ -301,6 +301,168 @@
   }
 }
 
+
+/* Mobile screen-fit adjustments */
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  section {
+    min-height: 100svh;
+    padding: 24px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .wrap {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 25px;
+    line-height: 1.15;
+    letter-spacing: 0.06em;
+  }
+
+  .hero h1 {
+    font-size: clamp(43px, 12vw, 68px);
+  }
+
+  .mono2 {
+    width: 65px;
+    font-size: 25px;
+  }
+
+  .small {
+    font-size: 0.78em;
+    letter-spacing: 0.14em;
+  }
+
+  .orn {
+    font-size: 1.05em;
+    margin: 6px 0;
+  }
+
+  .hero .mono2 {
+    margin-bottom: 10px !important;
+  }
+
+  .hero .count {
+    gap: 6px;
+    margin: 12px 0;
+  }
+
+  .hero .count div {
+    min-width: 0;
+    flex: 1;
+    padding: 7px 3px;
+  }
+
+  .hero .count b {
+    font-size: 25px;
+  }
+
+  .scratch {
+    height: 75px;
+    margin: 8px auto;
+  }
+
+  .scratch .rev {
+    font-size: 23px;
+  }
+
+  .fam {
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .fam h3 {
+    font-size: 38px;
+  }
+
+  .quote {
+    margin-top: 12px;
+  }
+
+  .rail {
+    margin-top: 14px;
+    padding-bottom: 12px;
+  }
+
+  .slide {
+    padding: 16px 12px;
+  }
+
+  .card {
+    margin-top: 14px;
+  }
+
+  .card h3 {
+    font-size: 42px;
+  }
+
+  .time {
+    font-size: 1.2em;
+  }
+
+  .frame {
+    padding: 12px;
+    margin: 4px;
+  }
+
+  .event-grid {
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .event-card {
+    padding: 12px 6px;
+  }
+
+  .event-card h3 {
+    font-size: clamp(23px, 7vw, 34px);
+  }
+
+  .event-card p {
+    margin: 5px 0;
+    font-size: 0.82em;
+    overflow-wrap: anywhere;
+  }
+
+  .event-card .time {
+    font-size: 1em;
+  }
+
+  .event-card .venue {
+    font-size: 0.75em;
+  }
+
+  .btn {
+    padding: 9px 14px;
+    font-size: 0.78em;
+  }
+
+  .verse {
+    margin-top: 12px;
+  }
+
+  label,
+  legend {
+    margin: 12px 0 5px;
+  }
+
+  form .btn {
+    margin-top: 16px;
+  }
+
+  footer {
+    padding: 20px 12px 30px;
+  }
+}
+
   </style>
   </head>
   <body class="locked">
