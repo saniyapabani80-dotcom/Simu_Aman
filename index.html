@@ -220,7 +220,7 @@
   section:nth-of-type(5)::after{background-image:url(images/bg2.jpg)}
   section:nth-of-type(6)::after{background-image:url(images/bg2.jpg)}
   section:nth-of-type(7)::after{background-image:url(images/bg2.jpg)}
-  footer::after{background-image:url(images/bg8.jpg)}
+  footer::after{background-image:url(images/bg2.jpg)}
 
 /* Wedding event cards — two columns */
 .event-grid {
@@ -309,6 +309,10 @@
   <div id="gate" role="button" tabindex="0" aria-label="Tap to open the invitation"><div class="nature"></div><canvas id="fx2"></canvas>
     <div><div class="env"><div class="eb"></div><div class="let"><div>Aman &amp; Simran<small>YOU ARE INVITED</small></div></div><div class="ef"><i class="a"></i><i class="b"></i><i class="c"></i></div><div class="fl"></div><div class="seal">A&amp;S</div></div><p>TAP TO OPEN</p></div>
   </div>
+
+  <audio id="weddingSong" preload="auto" loop>
+    <source src="audio/wedding-song.mp3" type="audio/mpeg">
+  </audio>
 
   <section class="hero">
     <div class="wrap">
@@ -472,7 +476,34 @@
   <script>
   (function(){
     var gate=document.getElementById('gate');
-    var busy=false;function open(){if(busy)return;busy=true;gate.classList.add('opening');setTimeout(function(){gate.classList.add('zoom');document.body.classList.remove('locked');},2300);setTimeout(function(){gate.classList.add('gone');window.startReveal&&window.startReveal();},3200);}
+
+    var busy=false;
+    function open(){
+      if(busy)return;
+      busy=true;
+
+      // Start the wedding song
+      var song=document.getElementById('weddingSong');
+      if(song){
+        song.volume=0.7;
+        song.play().catch(function(error){
+          console.log('Song playback failed:',error);
+        });
+      }
+
+      // Existing envelope animation
+      gate.classList.add('opening');
+      setTimeout(function(){
+        gate.classList.add('zoom');
+        document.body.classList.remove('locked');
+      },2300);
+
+      setTimeout(function(){
+        gate.classList.add('gone');
+        window.startReveal&&window.startReveal();
+      },3200);
+    }
+
     gate.addEventListener('click',open);
     gate.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});
 
