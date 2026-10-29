@@ -8,11 +8,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
   <style>
-  :root{--bg:#f7efe2;--bg2:#efe2cc;--ink:#4a1420;--accent:#8a2a3b;--gold:#b08a3e;--card:#fffaf0;--line:#d9c49a;
+  :root{--bg:#f7efe2;--a1:#efe2cc;--ink:#4a1420;--accent:#8a2a3b;--gold:#b08a3e;--card:#fffaf0;--line:#d9c49a;
   --serif:"Cormorant Garamond",Georgia,serif;--script:"Pinyon Script","Brush Script MT",cursive;
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a0f16;--bg2:#3a1520;--ink:#f3e6cf;--accent:#e2a9b3;--gold:#d8b56a;--card:#3a1a24;--line:#6b4a3a}}
-  :root[data-theme="dark"]{--bg:#2a0f16;--bg2:#3a1520;--ink:#f3e6cf;--accent:#e2a9b3;--gold:#d8b56a;--card:#3a1a24;--line:#6b4a3a}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a0f16;--a1:#3a1520;--ink:#f3e6cf;--accent:#e2a9b3;--gold:#d8b56a;--card:#3a1a24;--line:#6b4a3a}}
+  :root[data-theme="dark"]{--bg:#2a0f16;--a1:#3a1520;--ink:#f3e6cf;--accent:#e2a9b3;--gold:#d8b56a;--card:#3a1a24;--line:#6b4a3a}
   html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:clamp(18px,1.4vw,21px);line-height:1.55;text-align:center;-webkit-font-smoothing:antialiased}
@@ -24,7 +24,7 @@
   .small{letter-spacing:.28em;font-size:.98em;text-transform:uppercase;color:#000}
   .orn{color:rgb(107, 0, 0);font-size:1.3em;margin:14px 0}
   h2{font-size:clamp(30px,5vw,52px);letter-spacing:.14em;text-transform:uppercase}
-  .alt{background:var(--bg2)}
+  .alt{background:var(--a1)}
   .frame{border:1px solid var(--line);outline:1px solid var(--line);outline-offset:8px;background:var(--card);padding:clamp(28px,5vw,64px);margin:12px}
 
   /* Intro gate */
@@ -35,7 +35,7 @@
   @keyframes pulse{50%{opacity:.4}}
 
   /* Hero */
-  .hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at top,var(--bg2),var(--bg))}
+  .hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at top,var(--a1),var(--bg))}
   .hero h1{font-family:var(--script);font-size:clamp(56px,11vw,130px);color:#000;line-height:1}
   .hero h1 em{display:block;font-family:var(--serif);font-style:italic;font-size:.25em;color:black;margin:8px 0}
   .date{font-size:clamp(26px,4vw,44px);letter-spacing:.08em;margin:6px 0}
@@ -53,7 +53,7 @@
 
   /* Story carousel */
   .rail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 24px;margin:34px -4px 0;-webkit-overflow-scrolling:touch}
-  .slide{flex:0 0 min(78%,320px);scroll-snap-align:center;aspect-ratio:3/4;border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-9px;background:linear-gradient(160deg,var(--card),var(--bg2));display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:26px 18px;font-style:italic}
+  .slide{flex:0 0 min(78%,320px);scroll-snap-align:center;aspect-ratio:3/4;border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-9px;background:linear-gradient(160deg,var(--card),var(--a1));display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:26px 18px;font-style:italic}
   .slide i{font-style:normal;color:#000;font-size:2.4em;margin-bottom:auto;padding-top:20px}
   @media(min-width:900px){.slide{flex-basis:260px}}
 
@@ -190,8 +190,8 @@
   .arr.l{left:-58px}.arr.r{right:-58px}
   @media(max-width:480px){.arr.l{left:6px}.arr.r{right:6px}}
   /* v4 nature */
-  :root{--bg:#eef3e2;--bg2:#e0ecd0;--ink:#24402c;--accent:#3d6b3f;--gold:#9a7b2c;--card:#fbfaf0;--line:#c5d3a8}
-  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17261c;--bg2:#1f3326;--ink:#eaf3dd;--accent:#b9dca0;--gold:#e0c373;--card:#243a2b;--line:#4d6b4a}}
+  :root{--bg:#eef3e2;--a1:#e0ecd0;--ink:#24402c;--accent:#3d6b3f;--gold:#9a7b2c;--card:#fbfaf0;--line:#c5d3a8}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17261c;--a1:#1f3326;--ink:#eaf3dd;--accent:#b9dca0;--gold:#e0c373;--card:#243a2b;--line:#4d6b4a}}
   body>.nature{display:none}
   #fx{z-index:0}
   #fx2{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
@@ -210,17 +210,17 @@
   @media(prefers-color-scheme:dark){section::before,footer::before{background-blend-mode:multiply;background-color:#3b5650}
   section:nth-of-type(1)::before{background:radial-gradient(ellipse 80% 40% at 20% 102%,#264a30 0 60%,transparent 61%),radial-gradient(ellipse 90% 35% at 85% 106%,#1b3a28 0 60%,transparent 61%),radial-gradient(circle at 82% 12%,#f4efd0 0 2%,rgba(240,235,200,.3) 3%,transparent 12%),linear-gradient(#0f1c33,#1d2e45 60%,#223a33)}}
   /* v5 removed: dark text on light nature scenes */
-  /* v6 photo slots: drop images/bg2.jpg ... bg8.jpg next to index.html */
+  /* v6 photo slots: drop images/a1.jpg ... bg8.jpg next to index.html */
   section::after,footer::after,#gate .nature::after{content:"";position:absolute;inset:0;z-index:-1;background-size:cover;background-position:center;background-repeat:no-repeat}
   #gate .nature::after{z-index:0}
-  section:nth-of-type(1)::after,#gate .nature::after{background-image:url(images/bg2.jpg)}
-  section:nth-of-type(2)::after{background-image:url(images/bg2.jpg)}
-  section:nth-of-type(3)::after{background-image:url(images/bg2.jpg)}
-  section:nth-of-type(4)::after{background-image:url(images/bg2.jpg)}
-  section:nth-of-type(5)::after{background-image:url(images/bg2.jpg)}
-  section:nth-of-type(6)::after{background-image:url(images/bg2.jpg)}
-  section:nth-of-type(7)::after{background-image:url(images/bg2.jpg)}
-  footer::after{background-image:url(images/bg2.jpg)}
+  section:nth-of-type(1)::after,#gate .nature::after{background-image:url(images/a1.jpg)}
+  section:nth-of-type(2)::after{background-image:url(images/a1.jpg)}
+  section:nth-of-type(3)::after{background-image:url(images/a1.jpg)}
+  section:nth-of-type(4)::after{background-image:url(images/a1.jpg)}
+  section:nth-of-type(5)::after{background-image:url(images/a1.jpg)}
+  section:nth-of-type(6)::after{background-image:url(images/a1.jpg)}
+  section:nth-of-type(7)::after{background-image:url(images/a1.jpg)}
+  footer::after{background-image:url(images/a1.jpg)}
 
 /* Wedding event cards — two columns */
 .event-grid {
