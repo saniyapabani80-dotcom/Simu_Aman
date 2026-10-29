@@ -479,6 +479,66 @@ footer {
   border-top: 2px solid #222;
 }
 
+/* Mobile viewport and horizontal overflow fix */
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: clip;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Keep sections and content inside the phone screen */
+section,
+footer,
+.wrap {
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Make the scratch card fit small screens */
+.scratch {
+  width: min(100%, 340px);
+  max-width: 100%;
+  touch-action: pan-y;
+}
+
+.scratch canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Prevent mobile layout from becoming wider than the screen */
+@media (max-width: 600px) {
+  section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .wrap {
+    width: 100%;
+  }
+
+  .event-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
   </style>
   </head>
   <body class="locked">
@@ -741,10 +801,31 @@ footer {
   function finish(){done=true;box.classList.add('done');var s=['♥','❦','✦'],cs=['#e98fa3','#b08a3e','#8a2a3b','#f4b6c2'];
   for(var k=0;k<34;k++){var b=document.createElement('span');b.className='bit';b.textContent=s[k%3];var a=Math.random()*6.28,r=80+Math.random()*130;
   b.style.cssText='--x:'+Math.cos(a)*r+'px;--y:'+Math.sin(a)*r+'px;color:'+cs[k%4]+';font-size:'+(14+Math.random()*14)+'px';box.appendChild(b);setTimeout(function(el){return function(){el.remove()}}(b),1600)}}
-  sc.addEventListener('pointerdown',function(e){down=true;sc.setPointerCapture(e.pointerId);scratch(e)});
-  sc.addEventListener('pointermove',scratch);
-  sc.addEventListener('pointerup',function(){down=false;check()});
+  sc.addEventListener('pointerdown', function(e) {
+    if (done) return;
 
+    e.preventDefault();
+    down = true;
+    sc.setPointerCapture(e.pointerId);
+    scratch(e);
+  });
+
+  sc.addEventListener('pointermove', function(e) {
+    if (!down || done) return;
+
+    e.preventDefault();
+    scratch(e);
+  });
+
+  function stopScratching() {
+    if (!down) return;
+
+    down = false;
+    check();
+  }
+
+  sc.addEventListener('pointerup', stopScratching);
+  sc.addEventListener('pointercancel', stopScratching);
   var rail=document.querySelector('.rail'),car=document.createElement('div');car.className='car';rail.parentNode.insertBefore(car,rail);car.appendChild(rail);
   [['l','\u2039',-1],['r','\u203a',1]].forEach(function(a){var b=document.createElement('button');b.type='button';b.className='arr '+a[0];b.textContent=a[1];b.setAttribute('aria-label',a[2]<0?'Previous photo':'Next photo');
   b.onclick=function(){var end=rail.scrollLeft+rail.clientWidth>=rail.scrollWidth-4;if(a[2]>0&&end)rail.scrollTo({left:0,behavior:'smooth'});else rail.scrollBy({left:a[2]*rail.clientWidth,behavior:'smooth'})};car.appendChild(b)});
