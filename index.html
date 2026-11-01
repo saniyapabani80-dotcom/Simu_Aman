@@ -455,6 +455,7 @@
   }
   .event-card p {
     margin: 10px 0;
+    font-size:x-small;
   }
 
   .event-card .time {
@@ -860,6 +861,340 @@
     pointer-events: none;
   }
 
+    /* ===== FLOATING WEDDING MUSIC CONTROL ===== */
+
+    #musicControl {
+      position: fixed;
+      right: 20px;
+      bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+      z-index: 70;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 12px 19px;
+      border: 1px solid #c9a45c;
+      border-radius: 50px;
+
+      background: linear-gradient(135deg, #fffaf2, #f2dfd1);
+      color: #7d293c;
+
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 1px;
+
+      box-shadow: 0 5px 18px rgba(74,20,32,.22);
+      cursor: pointer;
+
+      transition: all .3s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    #musicControl:hover {
+      background: linear-gradient(135deg, #8a2a3b, #4a1420);
+      color: #fff4df;
+      transform: translateY(-3px);
+    }
+
+    #musicControl .music-icon {
+      font-size: 21px;
+    }
+
+    #musicControl:focus-visible {
+      outline: 3px solid #d5b77a;
+      outline-offset: 4px;
+    }
+
+    #musicControl.stopped {
+      background: #fff7f5;
+      color: #6b7050;
+      border-color: #c5d3a8;
+      opacity: .9;
+    }
+
+    @media(max-width: 600px) {
+      #musicControl {
+        right: 12px;
+        bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+        padding: 10px 15px;
+        font-size: 15px;
+      }
+    }
+
+    /* ===== FINAL THANK YOU PAGE ===== */
+
+    .thank-you {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .thank-you .wrap {
+      max-width: 760px;
+      width: 100%;
+    }
+
+    .thank-title {
+      font-family: var(--script);
+      font-size: clamp(65px, 12vw, 110px);
+      color: #3d6b3f;
+      text-transform: none;
+      letter-spacing: 0;
+      line-height: 1.2;
+      margin: 18px 0;
+    }
+
+    .thank-message {
+      max-width: 620px;
+      margin: 25px auto;
+      font-size: clamp(19px, 3vw, 25px);
+      line-height: 1.7;
+    }
+
+    .thank-names {
+      font-family: var(--script);
+      font-size: clamp(48px, 8vw, 72px);
+      color: #3d6b3f;
+      margin: 12px 0 30px;
+    }
+
+    .thank-you .btn {
+      display: inline-block;
+      margin: 15px 0;
+    }
+
+    /* ===== YA ALI MADAD FOOTER ===== */
+
+    footer.final-footer {
+      min-height: 90px;
+      padding: 25px 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 2px solid #222;
+      text-align: center;
+    }
+
+    .final-footer p {
+      margin: 0;
+      font-family: var(--script);
+      font-size: clamp(30px, 5vw, 42px);
+      color: #24402c;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 640px) {
+      .thank-you {
+        min-height: 100svh;
+        padding: 35px 18px;
+      }
+
+      .thank-message {
+        font-size: 18px;
+        line-height: 1.55;
+      }
+    }
+
+
+/* ===== RESPONSIVE A&S LOGO FONT FIX ===== */
+
+/* Main circular logos */
+.mono2 {
+  box-sizing: border-box;
+  width: clamp(76px, 12vw, 110px);
+  aspect-ratio: 1 / 1;
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(25px, 4vw, 34px);
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: nowrap;
+
+  color: #4A1420;
+  text-shadow: none;
+}
+
+  /* Envelope seal logo */
+  #gate .seal {
+    box-sizing: border-box;
+    width: 66px;
+    height: 66px;
+    padding: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 23px;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0;
+    line-height: 1;
+    white-space: nowrap;
+
+    color: #4A1420;
+    text-shadow: none;
+  }
+
+  /* Small mobile screens */
+  @media (max-width: 640px) {
+    .mono2 {
+      width: 76px;
+      min-width: 76px;
+      font-size: 25px;
+      padding: 6px;
+    }
+
+    #gate .seal {
+      width: 60px;
+      height: 60px;
+      font-size: 21px;
+    }
+  }
+
+  /* Very small phones */
+  @media (max-width: 360px) {
+    .mono2 {
+      width: 72px;
+      min-width: 72px;
+      font-size: 23px;
+    }
+
+    #gate .seal {
+      width: 56px;
+      height: 56px;
+      font-size: 19px;
+    }
+  }
+  
+  
+/* =========================================
+   PREMIUM WEDDING ENVELOPE DESIGN
+   ========================================= */
+
+/* Envelope base - keep your existing dimensions */
+#gate .env {
+  position: relative;
+  border-radius: 8px;
+  overflow: visible;
+  box-shadow:
+    0 20px 35px rgba(105, 57, 62, 0.20),
+    0 5px 12px rgba(105, 57, 62, 0.12);
+}
+
+/* Main envelope body */
+#gate .eb {
+  position: absolute;
+  inset: 0;
+  background: #D99A9E !important;
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+/* Invitation paper */
+#gate .let {
+  position: absolute;
+  z-index: 2;
+  background: #FFF8F1 !important;
+  color: #75464B;
+  border: 1px solid #E8C9B8;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(80,40,40,0.12);
+}
+
+/* Front folds container */
+#gate .ef {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: transparent !important;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Restore the three triangular folds */
+#gate .ef .a,
+#gate .ef .b,
+#gate .ef .c {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0 !important;
+  margin: 0;
+}
+
+/* Left fold */
+#gate .ef .a {
+  background: #D18B94 !important;
+  clip-path: polygon(0 0, 50% 50%, 0 100%);
+}
+
+/* Right fold */
+#gate .ef .b {
+  background: #D18B94 !important;
+  clip-path: polygon(100% 0, 50% 50%, 100% 100%);
+}
+
+/* Bottom fold */
+#gate .ef .c {
+  background: #D18B94 !important;
+  clip-path: polygon(0 100%, 50% 50%, 100% 100%);
+}
+
+/* Top triangular flap */
+#gate .fl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background: #E8B0AE !important;
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+  border: none !important;
+  transform-origin: 50% 0%;
+}
+
+/* A&S wax seal */
+#gate .seal {
+  position: absolute;
+  z-index: 5;
+  background: #e66c1c !important;
+  color: #c50052 !important;
+  border: 2px solid #E8C9A0 !important;
+  border-radius: 50%;
+  box-shadow:
+    0 3px 8px rgba(75,35,40,0.25),
+    inset 0 0 0 2px rgba(255,255,255,0.12);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  #gate .env {
+    border-radius: 7px;
+  }
+
+  #gate .seal {
+    border-width: 2px !important;
+  }
+}
+
     </style>
     </head>
     <body class="locked">
@@ -872,6 +1207,12 @@
     <audio id="weddingSong" preload="auto" loop>
       <source src="audio/wedding-song.mp3" type="audio/mpeg">
     </audio>
+
+    <!-- Floating Music Stop Button -->
+    <button id="musicControl" type="button" aria-label="Stop wedding music">
+      <span class="music-icon">♫</span>
+      <span id="musicLabel">Stop Music</span>
+    </button>
 
     <section class="hero">
       <div class="wrap">
@@ -904,13 +1245,15 @@
         <div class="fam">
           <div>
             <h3>Aman</h3><div class="orn">✦</div>
+            <p class="small">Grandson of</p><p>Hasam Vadsariya</p>
             <p class="small">S/o</p><p>Amir Hasam Vadsariya &amp; Mumtaz Amir Vadsariya</p>
             <p class="small" style="margin-top:16px">Brother of</p><p>Akil Amir Vadsariya</p>
           </div>
           <div class="mono2">A&amp;S</div>
           <div>
             <h3>Simran</h3><div class="orn">✦</div>
-            <p class="small">D/o</p><p>Nooruddin Pabani &amp; Parveen Nooruddin Pabani</p>
+            <p class="small">Granddaughter of</p><p>Shamshuddin Pabani</p>
+            <p class="small">D/o</p><p>Nooruddin Shamshuddin Pabani &amp; Parveen Nooruddin Pabani</p>
             <p class="small" style="margin-top:16px">Sister of</p><p>Saniya Pabani</p>
           </div>
         </div>
@@ -942,26 +1285,6 @@
             <div class="slide-caption">Moments to treasure forever</div>
           </div>
 
-          <div class="slide">
-            <img src="images/sam1.jpeg" alt="Our favourite memories">
-            <div class="slide-caption">Together is our favourite place</div>
-          </div>
-
-          <div class="slide">
-            <img src="images/sam1.jpeg" alt="A memory filled with love">
-            <div class="slide-caption">A lifetime of adventures awaits</div>
-          </div>
-
-          <div class="slide">
-            <img src="images/sam1.jpeg" alt="Our journey together">
-            <div class="slide-caption">The beginning of forever</div>
-          </div>
-
-          <div class="slide">
-            <img src="images/sam1.jpeg" alt="Our forever begins">
-            <div class="slide-caption">Forever starts with us</div>
-          </div>
-
         </div>
         <p class="quote">“From that first conversation to a lifetime of adventures”</p>
         <div class="orn">♥</div>
@@ -987,7 +1310,7 @@
           <p>Details to be added</p>
           <p class="small">Venue</p>
           <h5>Hotel Regal</h5>
-          <p class="small">Nampally Station Road, adjacent to Metro Foot Wear, opposite the ISKCON Temple, Abids, Hyderabad, Telangana – 500001</p>
+          <p>Nampally Station Road, adjacent to Metro Foot Wear, opposite the ISKCON Temple, Abids, Hyderabad, Telangana – 500001</p>
         </div>
 
         <!-- Right card: Sangeet -->
@@ -999,7 +1322,7 @@
           <p>Details to be added</p>
           <p class="small">Venue</p>
           <h5>Hotel Regal</h5>
-          <p class="small">Nampally Station Road, adjacent to Metro Foot Wear, opposite the ISKCON Temple, Abids, Hyderabad, Telangana – 500001</p>
+          <p>Nampally Station Road, adjacent to Metro Foot Wear, opposite the ISKCON Temple, Abids, Hyderabad, Telangana – 500001</p>
         </div>
 
       </div>
@@ -1035,18 +1358,49 @@
           <p>Details to be added</p>
           <p class="small">Venue</p>
           <h5>Hotel Regal</h5>
-          <p class="small">Nampally Station Road, adjacent to Metro Foot Wear, opposite the ISKCON Temple, Abids, Hyderabad, Telangana – 500001</p>
+          <p>Nampally Station Road, adjacent to Metro Foot Wear, opposite the ISKCON Temple, Abids, Hyderabad, Telangana – 500001</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <footer>
-      <p class="small">Celebrate this new chapter with us.</p>
+  <!-- FINAL THANK YOU PAGE -->
+  <section class="thank-you">
+    <div class="wrap">
+      <div class="orn">❦ ♥ ❦</div>
+
+      <p class="small">With heartfelt gratitude</p>
+
+      <h2 class="thank-title">Thank You!</h2>
+
+      <div class="orn">✦</div>
+
+      <p class="thank-message">
+        Your presence will make our celebration even more special.
+        <br><br>
+        We look forward to celebrating this beautiful moment
+        and creating unforgettable memories with you.
+      </p>
+
       <div class="orn">♥</div>
-      <a class="btn" href="http://google.com/maps/place/Collection+O+Hotel+Regal+Near+ISKON+TEMPLE+,+ABIDS/@17.3878098,78.4728465,17z/data=!3m1!4b1!4m9!3m8!1s0x3bcb99d61ede169d:0x234cb665b24bd221!5m2!4m1!1i2!8m2!3d17.3878047!4d78.4754214!16s%2Fg%2F1hdy_4pl3?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">📍 GET DIRECTIONS</a>
-    </footer>
+
+      <p class="small">With love,</p>
+      <h3 class="thank-names">Aman &amp; Simran</h3>
+
+      <a class="btn" href="http://google.com/maps/place/Collection+O+Hotel+Regal+Near+ISKON+TEMPLE+,+ABIDS/@17.3878098,78.4728465,17z/data=!3m1!4b1!4m9!3m8!1s0x3bcb99d61ede169d:0x234cb665b24bd221!5m2!4m1!1i2!8m2!3d17.3878047!4d78.4754214!16s%2Fg%2F1hdy_4pl3?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank" rel="noopener">
+        📍 GET DIRECTIONS
+      </a>
+
+      <div class="orn">❦</div>
+    </div>
+  </section>
+
+  <!-- FINAL FOOTER -->
+  <footer class="final-footer">
+    <p>Ya Ali Madad</p>
+  </footer>
 
     <script>
     (function(){
@@ -1057,12 +1411,14 @@
         if(busy)return;
         busy=true;
 
-        // Start the wedding song
-        var song=document.getElementById('weddingSong');
-        if(song){
-          song.volume=0.7;
-          song.play().catch(function(error){
-            console.log('Song playback failed:',error);
+        // Start the wedding song only if the user has not stopped it
+        var song = document.getElementById('weddingSong');
+
+        if (song && !window.weddingMusicStopped) {
+          song.volume = 0.7;
+
+          song.play().catch(function(error) {
+            console.log('Song playback failed:', error);
           });
         }
 
@@ -1161,6 +1517,36 @@
     var els=[];map.forEach(function(m){document.querySelectorAll(m[0]).forEach(function(el){if(!el.classList.contains('rv')){el.classList.add('rv',m[1]);el.style.transitionDelay=(els.length%4)*.1+'s';els.push(el)}})});
     window.startReveal=function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});els.forEach(function(el){io.observe(el)})};
     })();
+    </script>
+    <script>
+      (function() {
+
+        var song = document.getElementById('weddingSong');
+        var button = document.getElementById('musicControl');
+        var label = document.getElementById('musicLabel');
+
+        window.weddingMusicStopped = false;
+
+        if (!song || !button || !label) return;
+
+        // Stop music when the button is pressed
+        button.addEventListener('click', function(e) {
+
+          e.preventDefault();
+          e.stopPropagation();
+
+          window.weddingMusicStopped = true;
+
+          song.pause();
+          song.currentTime = 0;
+
+          label.textContent = 'Music Stopped';
+
+          button.classList.add('stopped');
+          button.setAttribute('aria-label', 'Music stopped');
+
+        });
+      })();
     </script>
     </body>
     </html>
