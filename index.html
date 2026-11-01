@@ -357,16 +357,16 @@
     .frame{border:0;outline:0;background:none;padding:0;margin:0}
     .count div{border:0;background:none}
     .env{transform:rotateX(18deg) rotateY(-12deg);transform-style:preserve-3d;filter:none;transition:transform 1.3s cubic-bezier(.5,0,.2,1)}
-    .eb{background:linear-gradient(135deg,#ecd9ad,#d9bd80);box-shadow:0 30px 45px rgba(0,0,0,.4),0 6px 10px rgba(0,0,0,.25);border-radius:3px}
+    .eb{background:linear-gradient(135deg,#F8D7DA,#E8AEB5);box-shadow:0 30px 45px rgba(0,0,0,.4),0 6px 10px rgba(0,0,0,.25);border-radius:3px}
     .let{box-shadow:0 2px 8px rgba(0,0,0,.2);text-shadow:none}
     .ef{background:none;clip-path:none;inset:0}
     .ef i{position:absolute;inset:0}
-    .ef .a{background:linear-gradient(90deg,#d6b878,#e8d29e);clip-path:polygon(0 0,50% 56%,0 100%)}
-    .ef .b{background:linear-gradient(270deg,#cba964,#e0c68a);clip-path:polygon(100% 0,50% 56%,100% 100%)}
-    .ef .c{background:linear-gradient(#e9d3a2,#d6b878);clip-path:polygon(0 100%,50% 56%,100% 100%)}
-    .fl{background:linear-gradient(#c7a55e,#b48f48);transition:transform .9s .4s ease,background .9s .4s}
-    #gate.opening .fl{background:linear-gradient(#ecdcb4,#dcc48a)}
-    .seal{width:66px;height:66px;margin-left:-33px;top:43%;background:radial-gradient(circle at 35% 30%,#f6e3a1,#c9a24a 60%,#a47f30);color:#6b1a2a;font-family:var(--script);font-size:25px;box-shadow:0 3px 8px rgba(0,0,0,.4),inset 0 0 0 3px rgba(255,255,255,.3);text-shadow:none}
+    .ef .a{background:linear-gradient(90deg,#E9B8BE,#F5D5D6);clip-path:polygon(0 0,50% 56%,0 100%)}
+    .ef .b{background:linear-gradient(270deg,#DFA3AC,#F0C7CB);clip-path:polygon(100% 0,50% 56%,100% 100%)}
+    .ef .c{background:linear-gradient(#F5D5D6,#E6AAB2);clip-path:polygon(0 100%,50% 56%,100% 100%)}
+    .fl{background:linear-gradient(180deg,#F8DDE0,#D98F9B);transition:transform .9s .4s ease,background .9s .4s}
+    #gate.opening .fl{background:linear-gradient(180deg, #FCE8E9, #EABCC2)}
+    .seal{width:66px;height:66px;margin-left:-33px;top:43%;background:radial-gradient(circle at 35% 30%,#FFF0D8, #DDA0A8 60%, #A94F61);color:#6b1a2a;font-family:var(--script);font-size:25px;box-shadow:0 3px 8px rgba(0,0,0,.4),inset 0 0 0 3px rgba(255,255,255,.3);text-shadow:none}
     #gate.opening .env{transform:rotateX(0) rotateY(0) scale(1.25)}
     #gate.zoom .env{transform-origin:50% 16%;transform:scale(9);transition:transform 1.5s cubic-bezier(.6,0,.9,.6)}
     #gate.zoom{opacity:0;transition:opacity 1s .5s,visibility 1s .5s}
@@ -1081,120 +1081,6 @@
     }
   }
   
-  
-/* =========================================
-   PREMIUM WEDDING ENVELOPE DESIGN
-   ========================================= */
-
-/* Envelope base - keep your existing dimensions */
-#gate .env {
-  position: relative;
-  border-radius: 8px;
-  overflow: visible;
-  box-shadow:
-    0 20px 35px rgba(105, 57, 62, 0.20),
-    0 5px 12px rgba(105, 57, 62, 0.12);
-}
-
-/* Main envelope body */
-#gate .eb {
-  position: absolute;
-  inset: 0;
-  background: #D99A9E !important;
-  border: 1px solid rgba(255,255,255,0.45);
-  border-radius: 8px;
-  z-index: 1;
-}
-
-/* Invitation paper */
-#gate .let {
-  position: absolute;
-  z-index: 2;
-  background: #FFF8F1 !important;
-  color: #75464B;
-  border: 1px solid #E8C9B8;
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(80,40,40,0.12);
-}
-
-/* Front folds container */
-#gate .ef {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  background: transparent !important;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-/* Restore the three triangular folds */
-#gate .ef .a,
-#gate .ef .b,
-#gate .ef .c {
-  display: block !important;
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0 !important;
-  margin: 0;
-}
-
-/* Left fold */
-#gate .ef .a {
-  background: #D18B94 !important;
-  clip-path: polygon(0 0, 50% 50%, 0 100%);
-}
-
-/* Right fold */
-#gate .ef .b {
-  background: #D18B94 !important;
-  clip-path: polygon(100% 0, 50% 50%, 100% 100%);
-}
-
-/* Bottom fold */
-#gate .ef .c {
-  background: #D18B94 !important;
-  clip-path: polygon(0 100%, 50% 50%, 100% 100%);
-}
-
-/* Top triangular flap */
-#gate .fl {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 4;
-  background: #E8B0AE !important;
-  clip-path: polygon(0 0, 100% 0, 50% 50%);
-  border: none !important;
-  transform-origin: 50% 0%;
-}
-
-/* A&S wax seal */
-#gate .seal {
-  position: absolute;
-  z-index: 5;
-  background: #e66c1c !important;
-  color: #c50052 !important;
-  border: 2px solid #E8C9A0 !important;
-  border-radius: 50%;
-  box-shadow:
-    0 3px 8px rgba(75,35,40,0.25),
-    inset 0 0 0 2px rgba(255,255,255,0.12);
-}
-
-/* Mobile adjustments */
-@media (max-width: 600px) {
-  #gate .env {
-    border-radius: 7px;
-  }
-
-  #gate .seal {
-    border-width: 2px !important;
-  }
-}
-
     </style>
     </head>
     <body class="locked">
