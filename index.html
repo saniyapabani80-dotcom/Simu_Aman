@@ -475,11 +475,10 @@
   /* Keep two cards side by side on mobile too */
   @media (max-width: 640px) {
     .event-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      grid-template-columns: 1fr;
+      gap: 18px;
       margin-top: 24px;
     }
-
     .event-card {
       padding: 22px 10px;
       outline-offset: -5px;
@@ -725,7 +724,7 @@
       }
 
       .event-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
       }
     }
 
@@ -2086,6 +2085,18 @@
   }
 }
 
+/* ===== MOBILE EVENT CARDS: ONE BELOW ANOTHER ===== */
+
+@media (max-width: 640px) {
+  .event-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .event-card {
+    width: 100%;
+  }
+}
 
     </style>
     </head>
