@@ -2098,6 +2098,36 @@
   }
 }
 
+/* ===== FIX HOTEL ADDRESS OVERFLOW IN EVENT CARDS ===== */
+
+.event-card h6 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+
+  text-align: center;
+  line-height: 1.6;
+  font-size: 13px;
+
+  padding: 0 8px;
+  margin: 10px 0 16px;
+}
+
+/* Extra adjustment for smaller phone screens */
+@media (max-width: 640px) {
+  .event-card h6 {
+    font-size: 12px;
+    line-height: 1.55;
+    padding: 0 6px;
+  }
+}
+
     </style>
     </head>
     <body class="locked">
